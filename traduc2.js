@@ -1008,6 +1008,87 @@ window.frasesApp = {
     "spanish": "Él ya había desayunado antes del trabajo."
   },
 
+    {
+    "english": "She finally achieved her dream.",
+    "spanish": "Ella finalmente logró su sueño."
+  },
+  {
+    "english": "His greatest achievement was winning the championship.",
+    "spanish": "Su mayor logro fue ganar el campeonato."
+  },
+  {
+    "english": "They have achieved many important goals.",
+    "spanish": "Ellos han logrado muchas metas importantes."
+  },
+  {
+    "english": "I hope you achieve everything you want.",
+    "spanish": "Espero que logres todo lo que quieres."
+  },
+  {
+    "english": "We achieved success after years of hard work.",
+    "spanish": "Logramos el éxito después de años de trabajo duro."
+  },
+  {
+    "english": "She achieved excellent results.",
+    "spanish": "Ella logró excelentes resultados."
+  },
+  {
+    "english": "He finally achieved his objective.",
+    "spanish": "Él finalmente logró su objetivo."
+  },
+  {
+    "english": "Their achievements inspired many people.",
+    "spanish": "Sus logros inspiraron a muchas personas."
+  },
+  {
+    "english": "You can achieve anything with determination.",
+    "spanish": "Puedes lograr cualquier cosa con determinación."
+  },
+  {
+    "english": "The team achieved an important victory.",
+    "spanish": "El equipo logró una victoria importante."
+  },
+  {
+    "english": "She has achieved more than anyone expected.",
+    "spanish": "Ella ha logrado más de lo que cualquiera esperaba."
+  },
+  {
+    "english": "Completing the project was a great achievement.",
+    "spanish": "Completar el proyecto fue un gran logro."
+  },
+  {
+    "english": "He achieved his goal despite many difficulties.",
+    "spanish": "Él logró su meta a pesar de muchas dificultades."
+  },
+  {
+    "english": "Our biggest achievement was finishing on time.",
+    "spanish": "Nuestro mayor logro fue terminar a tiempo."
+  },
+  {
+    "english": "She worked hard to achieve success.",
+    "spanish": "Ella trabajó duro para lograr el éxito."
+  },
+  {
+    "english": "They achieved everything they planned.",
+    "spanish": "Ellos lograron todo lo que planearon."
+  },
+  {
+    "english": "Winning the award was his proudest achievement.",
+    "spanish": "Ganar el premio fue su logro más importante."
+  },
+  {
+    "english": "We have achieved several improvements this year.",
+    "spanish": "Hemos logrado varias mejoras este año."
+  },
+  {
+    "english": "He never gave up until he achieved his dream.",
+    "spanish": "Nunca se rindió hasta que logró su sueño."
+  },
+  {
+    "english": "Achieving peace is not easy.",
+    "spanish": "Lograr la paz no es fácil."
+  },
+
   {
     "english": "We had visited that museum once before.",
     "spanish": "Nosotros habíamos visitado ese museo una vez antes."
@@ -1123,6 +1204,29 @@ window.frasesApp = {
     "english": "The children jumped into the pool with excitement.",
     "spanish": "Los niños saltaron a la piscina con emoción."
   },
+
+   { english: "The sun rises early in the morning sky.", 
+   spanish: "El sol sale temprano en el cielo matutino." },
+    { english: "Children play happily in the park every afternoon.", spanish: "Los niños juegan felices en el parque cada tarde." },
+    { english: "She reads mystery novels by the fireplace nightly.", spanish: "Ella lee novelas de misterio junto a la chimenea." },
+    { english: "Coffee tastes better when shared with good friends.", spanish: "El café sabe mejor cuando se comparte con amigos." },
+    { english: "Birds migrate south when winter approaches each year.", spanish: "Las aves migran al sur cuando el invierno se acerca." },
+    { english: "Teachers inspire young minds to explore new possibilities.", spanish: "Los maestros inspiran mentes jóvenes a explorar nuevas posibilidades." },
+    { english: "Raindrops fell gently on the old wooden roof.", spanish: "Las gotas de lluvia caían suavemente sobre el viejo techo." },
+    { english: "We should always appreciate life's simple pleasures daily.", spanish: "Debemos apreciar siempre los pequeños placeres de la vida." },
+    { english: "Adventurers discovered ancient ruins deep in the jungle.", spanish: "Aventureros descubrieron ruinas antiguas en lo profundo de la selva." },
+    { english: "Music has the power to heal broken hearts.", spanish: "La música tiene el poder de sanar corazones rotos." },
+    { english: "Fresh bread baking in the oven smells divine.", spanish: "El pan fresco horneándose en el horno huele divino." },
+    { english: "Stars twinkle brightly on clear summer nights above.", spanish: "Las estrellas brillan intensamente en las noches despejadas de verano." },
+    { english: "Traveling expands our understanding of different cultures significantly.", spanish: "Viajar amplía nuestro entendimiento de diferentes culturas significativamente." },
+    { english: "Kindness costs nothing but means everything to others.", spanish: "La amabilidad no cuesta nada pero lo significa todo." },
+    { english: "Books can transport you to imaginary worlds magically.", spanish: "Los libros pueden transportarte a mundos imaginarios mágicamente." },
+    { english: "Morning dew glistens on the green grass blades.", spanish: "El rocío matutino brilla sobre las hojas de hierba." },
+    { english: "Scientists continue researching solutions for climate change urgently.", spanish: "Los científicos siguen investigando soluciones para el cambio climático." },
+    { english: "Laughter echoes through the halls of happy homes.", spanish: "Las risas resuenan en los pasillos de hogares felices." },
+    { english: "Memories of childhood stay with us forever vividly.", spanish: "Los recuerdos de la infancia permanecen vívidamente para siempre." },
+    { english: "Courage means facing fears even when trembling inside.", spanish: "El coraje implica enfrentar miedos incluso con temblor interno." },
+    { english: "Moonlight casts shadows on the quiet desert landscape.", spanish: "La luz lunar proyecta sombras sobre el desierto silencioso." },
 
 
         {
