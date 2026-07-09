@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Práctica de Traducción Español-Inglés</title>
-    <script src="traduc2.js"></script>
+    <script src="traduc3.js"></script>
     <style>
         .clear-btn {
     position: absolute;
@@ -32,19 +32,25 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-            padding: 20px;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+
+    min-height: 100dvh;
+    margin: 0;
+    padding: 20px;
+    padding-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
         
         .container {
             width: 100%;
@@ -386,7 +392,7 @@
             </div>
             <div class="stat-box">
                 <span class="stat-label">Tiempo Restante</span>
-                <span class="stat-value" id="next-phrase-timer">27s</span>
+                <span class="stat-value" id="next-phrase-timer">28s</span>
             </div>
         </div>
         
@@ -397,6 +403,16 @@
     </div>
     
     <script>
+
+// ======== PREFERENCIAS ========
+const preferencias = {
+    autocorregirUltimos5Segundos: true,
+    segundosRestantes: 5,
+    reemplazos: {
+        "leave": "leaved"
+    }
+};
+
 const spanishPhraseEl = document.getElementById('spanish-phrase');
 const englishPhraseEl = document.getElementById('english-phrase');
 const inputEl = document.getElementById('translation-input');
@@ -438,7 +454,7 @@ englishPhraseEl.addEventListener('click', async () => {
         let showEnglishTimeout;
         let completedCount = 0;
         let correctCount = 0;
-        let timeLeft = 27; // Tiempo inicial en segundos
+        let timeLeft = 28; // Tiempo inicial en segundos
 
         // Function to get the completed phrases set from localStorage
         function getCompletedSet() {
@@ -461,8 +477,8 @@ englishPhraseEl.addEventListener('click', async () => {
                 return;
             }
 
-            completedCount = completedSet.size;
-            correctCount = completedSet.size;
+            const restantes = window.frasesApp.phrases.length - completedSet.size;
+            completedCountEl.textContent = restantes;
 
             loadNextPhrase();
             inputEl.focus();
@@ -479,7 +495,7 @@ englishPhraseEl.addEventListener('click', async () => {
             inputEl.style.borderColor = '#ff6b6b';
             inputEl.style.height = '50px'; // Reset altura
             progressBarEl.style.width = '0%';
-            timeLeft = 27;
+            timeLeft = 28;
             timerTextEl.textContent = timeLeft;
             timerProgressEl.style.strokeDashoffset = '0';
 
@@ -504,11 +520,20 @@ englishPhraseEl.addEventListener('click', async () => {
 
         function updateTimer() {
             timeLeft--;
+            // Autocorrección en los últimos segundos
+if (
+    preferencias.autocorregirUltimos5Segundos &&
+    timeLeft <= preferencias.segundosRestantes
+) {
+    aplicarAutocorreccion();
+} 
+
+
             timerTextEl.textContent = timeLeft;
             nextPhraseTimerEl.textContent = `${timeLeft}s`;
 
             const circumference = 2 * Math.PI * 45;
-            const offset = circumference - (circumference * timeLeft / 27);
+            const offset = circumference - (circumference * timeLeft / 28);
             timerProgressEl.style.strokeDashoffset = offset;
 
             if (timeLeft <= 0) {
@@ -616,6 +641,26 @@ clearBtn.addEventListener('click', () => {
     // Opcional: volver a enfocar el input
     inputEl.focus();
 });
+
+
+function aplicarAutocorreccion() {
+
+    let texto = inputEl.value;
+
+    for (const [buscar, reemplazar] of Object.entries(preferencias.reemplazos)) {
+
+        const regex = new RegExp(`\\b${buscar}\\b`, "gi");
+
+        texto = texto.replace(regex, reemplazar);
+    }
+
+    if (texto !== inputEl.value) {
+        inputEl.value = texto;
+
+        // Hace que vuelva a ejecutarse la validación existente
+        inputEl.dispatchEvent(new Event("input"));
+    }
+}
     </script>
 </body>
 </html>
