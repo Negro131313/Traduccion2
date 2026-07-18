@@ -31,6 +31,29 @@
             padding: 0;
         }
         
+
+         .reset-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+  
+
         body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
@@ -302,7 +325,7 @@
             left: 20%;
             width: 150px;
             height: 150px;
-            animation-delay: 9s;
+            animation-delay: 29s;
         }
         
         @keyframes float {
@@ -349,7 +372,10 @@
     <div class="decoration"></div>
     
     <div class="container">
+        <button id="reset-btn" class="reset-btn">🔄</button>
         <button id="clear-btn" class="clear-btn">🧹</button>
+
+
         <h1>Práctica de Traducción</h1>
         <div class="subtitle">Español → Inglés</div>
         
@@ -392,7 +418,7 @@
             </div>
             <div class="stat-box">
                 <span class="stat-label">Tiempo Restante</span>
-                <span class="stat-value" id="next-phrase-timer">28s</span>
+                <span class="stat-value" id="next-phrase-timer">29s</span>
             </div>
         </div>
         
@@ -409,7 +435,12 @@ const preferencias = {
     autocorregirUltimos5Segundos: true,
     segundosRestantes: 5,
     reemplazos: {
-        "leave": "leaved"
+        "leave": "leaved",
+        "today": "the day",
+        "on to": "onto",
+        "2": "two",
+        "decline": "deadline",
+
     }
 };
 
@@ -454,7 +485,7 @@ englishPhraseEl.addEventListener('click', async () => {
         let showEnglishTimeout;
         let completedCount = 0;
         let correctCount = 0;
-        let timeLeft = 28; // Tiempo inicial en segundos
+        let timeLeft = 29; // Tiempo inicial en segundos
 
         // Function to get the completed phrases set from localStorage
         function getCompletedSet() {
@@ -495,7 +526,7 @@ englishPhraseEl.addEventListener('click', async () => {
             inputEl.style.borderColor = '#ff6b6b';
             inputEl.style.height = '50px'; // Reset altura
             progressBarEl.style.width = '0%';
-            timeLeft = 28;
+            timeLeft = 29;
             timerTextEl.textContent = timeLeft;
             timerProgressEl.style.strokeDashoffset = '0';
 
@@ -515,7 +546,7 @@ englishPhraseEl.addEventListener('click', async () => {
 
             showEnglishTimeout = setTimeout(() => {
                 englishPhraseEl.classList.add('show');
-            }, 7000);
+            }, 10000);
         }
 
         function updateTimer() {
@@ -533,7 +564,7 @@ if (
             nextPhraseTimerEl.textContent = `${timeLeft}s`;
 
             const circumference = 2 * Math.PI * 45;
-            const offset = circumference - (circumference * timeLeft / 28);
+            const offset = circumference - (circumference * timeLeft / 29);
             timerProgressEl.style.strokeDashoffset = offset;
 
             if (timeLeft <= 0) {
@@ -643,6 +674,23 @@ clearBtn.addEventListener('click', () => {
 });
 
 
+const resetBtn = document.getElementById('reset-btn');
+
+resetBtn.addEventListener('click', () => {
+
+    const confirmar = confirm(
+        '¿Estás seguro de que quieres reiniciar el conteo?\n\n' +
+        'Se borrará todo el progreso y comenzarás desde cero.'
+    );
+
+    if (!confirmar) return;
+
+    localStorage.removeItem('completedPhrases_english');
+
+    location.reload();
+});
+
+
 function aplicarAutocorreccion() {
 
     let texto = inputEl.value;
@@ -663,4 +711,4 @@ function aplicarAutocorreccion() {
 }
     </script>
 </body>
-</html>
+</html>19.491741, -99.106371
